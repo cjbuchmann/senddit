@@ -8,6 +8,9 @@ Spork.prefork do
   require 'rspec/rails'
   require 'rspec/autorun'
 
+  # Add this to load Capybara integration:
+  require 'capybara/rspec'
+
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
@@ -34,5 +37,8 @@ Spork.prefork do
 
     # Require Factory Girls
     config.include FactoryGirl::Syntax::Methods
+
+    # include devise test helpers
+    config.include Devise::TestHelpers, :type => :controller
   end
 end

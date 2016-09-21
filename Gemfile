@@ -42,8 +42,13 @@ group :test, :development do
   gem 'guard'
   gem 'guard-spork'
 
+  gem 'rb-readline'
+
   gem 'guard-rspec'
   gem 'rspec-rails'
+  
+  gem 'capybara'
 
   gem 'growl', :require => false
+  gem 'ruby_gntp'
 end
